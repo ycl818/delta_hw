@@ -1,8 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
 *, *::after, *::before{
   padding: 0;
   margin:  0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
+:root {
+  --black-color: #000000;
+  --gray-color: #6b7688;
+  --white-color: #ffffff;
+  --dashboard-color:#F8FAFC;
+  --select-color: #0061F4;
+}
+
 
 body {
   margin: 0;
@@ -17,3 +29,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+

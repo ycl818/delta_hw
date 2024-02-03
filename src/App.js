@@ -1,9 +1,15 @@
+import { useState } from "react";
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <div className="App">
-      <p>hello</p>
+      <Navbar setOpen={setOpen} isOpen={isOpen} />
+      <Dashboard setOpen={setOpen} isOpen={isOpen} />
     </div>
   );
 }

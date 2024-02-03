@@ -1,0 +1,13 @@
+.dashboard__container {
+  position: relative;
+  left: 60px;
+  background-color: var(--dashboard-color);
+  min-height: calc(100vh - 3rem);
+  width: calc(100% - 60px);
+}
+
+.dashboard__container.shrink {
+  left: 260px; 
+  right: 0;
+  width: calc(100% - 260px);
+}

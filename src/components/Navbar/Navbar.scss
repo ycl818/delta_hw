@@ -1,0 +1,15 @@
+.navbar__container {
+  position: relative;
+  color: var(--gray-color);
+  height: 3rem;
+  //border: 1px solid var(--gray-color);
+  transition: all 0.3s ease;
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
+.navbar__container.shrink {
+  left: 260px; 
+  right: 0;
+  width: calc(100% - 260px);
+}
