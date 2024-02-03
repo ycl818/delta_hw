@@ -1,0 +1,22 @@
+.avatar_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  // background-color: aqua;
+  padding: 0 0.5rem;
+  border-radius: .2rem;
+}
+
+.avatar_wrapper:hover {
+  background-color: var(--light-gray-color);
+  
+}
+
+.avatar__image {
+  // box-shadow: 0px 2px 15px -1px rgb(0 0 0/ 20%),
+  // 0px 1px 2px 0px rgb(0 0 0 /14%),
+  // 0px 1px 17px 0px rgb(0 0 0 / 12%);
+  border-radius: 100%;
+}

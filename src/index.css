@@ -10,6 +10,8 @@
 :root {
   --black-color: #000000;
   --gray-color: #6b7688;
+  --dark-gray-color:#a8acac;
+  --light-gray-color:#acaeb1;
   --white-color: #ffffff;
   --dashboard-color:#F8FAFC;
   --select-color: #0061F4;

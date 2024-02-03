@@ -13,3 +13,21 @@
   right: 0;
   width: calc(100% - 260px);
 }
+
+.navbar__leftGroup {
+  display: flex;
+  justify-content: space-between;
+
+  .pageTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.navbar__rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  // margin-right: 1rem;
+}

@@ -1,4 +1,3 @@
-// import "./styles.css";
 import "./Sidebar.scss";
 import Hamburger from "hamburger-react";
 import { MdElectricBolt } from "react-icons/md";
