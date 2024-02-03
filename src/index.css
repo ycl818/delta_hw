@@ -10,7 +10,7 @@
 :root {
   --black-color: #000000;
   --gray-color: #6b7688;
-  --dark-gray-color:#a8acac;
+  --dark-gray-color:#7d7e7e;
   --light-gray-color:#acaeb1;
   --white-color: #ffffff;
   --dashboard-color:#F8FAFC;
@@ -32,7 +32,63 @@ code {
     monospace;
 }
 
+.summarizePage__group0 {
+  display: flex;
+  justify-content: space-evenly;
+  gap:0.1rem;
+}
+
+.summarizePage__group1 {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+ 
+  justify-content: space-around;
+  border-style: dashed;
+  border-color: var(--gray-color);
+  padding: 0.5rem;
+  overflow: hidden;
+
+  .summarizePage__group1-2 {
+    display: flex;
+    gap: 1rem;
+    
+  }
+}
+
+.summarizePage__group2 {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+  overflow: hidden;
+  min-width: calc(100% - 2rem);
+
+}
 
 
+@media screen and (max-width: 1380px) {
+  .summarizePage__group1 {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .summarizePage__group0 {
+    /* flex-direction: column; */
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+}
 
 
+@media screen and (max-width: 870px) {
+  .summarizePage__group1-2 {
+    flex-direction: column;
+  }
+}

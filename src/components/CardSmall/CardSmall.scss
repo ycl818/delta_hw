@@ -1,0 +1,39 @@
+.cardSmall__wrapper {
+  width: calc(25%);
+  background-color: var(--white-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  min-width: 283px;
+}
+
+.cardSmall__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardSmall__body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: center;
+
+  .cardSmall__body-value {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  
+}
+
+.cardSmall__body-judge {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.cardSmall__footer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}

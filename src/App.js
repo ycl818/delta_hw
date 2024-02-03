@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { Route, Routes } from "react-router-dom";
-import SummerizePage from "./pages/SummarizePage";
+import SummarizePage from "./pages/SummarizePage";
 import PowerFlowAnalyzerPage from "./pages/PowerFlowAnalyzerPage";
 import PowerTransferPage from "./pages/PowerTransferPage";
 import EssentialDataPage from "./pages/EssentialDataPage";
@@ -25,7 +25,7 @@ function App() {
           path="/"
           element={<Dashboard setOpen={setOpen} isOpen={isOpen} />}
         >
-          <Route path="/summarize" element={<SummerizePage />} />
+          <Route path="/summarize" element={<SummarizePage />} />
           <Route
             path="/power-flow-analyzer"
             element={<PowerFlowAnalyzerPage />}

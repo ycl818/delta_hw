@@ -63,7 +63,7 @@
 
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   top: 0;
   left: 0;
@@ -104,6 +104,7 @@
   top: 0;
   left: 0;
   width: 260px;
+  // overflow-y: auto;
 }
 
 .sidebar__menu {
@@ -112,19 +113,22 @@
 }
 
 
-.sidebar__button-7 {
-  position: relative;
-  bottom: -300%;
+.sidebar__button-7{
+  position: static;
+  margin-top: 2rem;
 
 }
-
-.sidebar__button-8 {
-  position: relative;
-  bottom: -300%;
-}
-
 
 
 .sidebar__link {
   text-decoration: none;
+}
+
+
+@media screen and (max-height: 767px) {
+  // 如果使用者之視窗寬度 <= 768px，將會再載入這裡的 CSS。
+  .sidebar__button {
+    height: 40px;
+    
+  }
 }
