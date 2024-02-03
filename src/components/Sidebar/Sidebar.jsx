@@ -10,17 +10,30 @@ import { PiShareNetworkLight } from "react-icons/pi";
 import { IoHelpCircleOutline } from "react-icons/io5";
 import { CiSettings } from "react-icons/ci";
 import { IoLogOutOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const links = [
-  { name: "概觀", icon: <RxDashboard /> },
-  { name: "餘電匹配分析", icon: <MdInsertChart /> },
-  { name: "基本資料", icon: <MdOutlineShoppingCartCheckout /> },
-  { name: "轉供電量", icon: <SlBriefcase /> },
-  { name: "轉供最佳化", icon: <GoLink /> },
-  { name: "契約最佳化", icon: <PiShareNetworkLight /> },
-  { name: "幫助", icon: <IoHelpCircleOutline /> },
-  { name: "設定", icon: <CiSettings /> },
-  { name: "登出", icon: <IoLogOutOutline /> },
+  { name: "概觀", icon: <RxDashboard />, linkName: "summarize" },
+  {
+    name: "餘電匹配分析",
+    icon: <MdInsertChart />,
+    linkName: "power-flow-analyzer",
+  },
+  {
+    name: "轉供電量",
+    icon: <MdOutlineShoppingCartCheckout />,
+    linkName: "power-transfer",
+  },
+  { name: "基本資料", icon: <SlBriefcase />, linkName: "essential-data" },
+  { name: "轉供最佳化", icon: <GoLink />, linkName: "opti-transfer" },
+  {
+    name: "契約最佳化",
+    icon: <PiShareNetworkLight />,
+    linkName: "opti-agreement",
+  },
+  { name: "幫助", icon: <IoHelpCircleOutline />, linkName: "help" },
+  { name: "設定", icon: <CiSettings />, linkName: "settings" },
+  { name: "登出", icon: <IoLogOutOutline />, linkName: "logout" },
 ];
 
 export const Sidebar = ({ isOpen, setOpen }) => {
@@ -52,14 +65,16 @@ export const Sidebar = ({ isOpen, setOpen }) => {
             </div>
             <hr className="sidebar__horizon" />
             {links.map((item, idx) => (
-              <button
-                key={item.name}
-                type="button"
-                className={`sidebar__button sidebar__button-${idx}`}
-              >
-                <span>{item.icon}</span>
-                <p>{item.name}</p>
-              </button>
+              <Link className="sidebar__link" to={`${item.linkName}`}>
+                <button
+                  key={item.name}
+                  type="button"
+                  className={`sidebar__button sidebar__button-${idx}`}
+                >
+                  <span>{item.icon}</span>
+                  <p>{item.name}</p>
+                </button>
+              </Link>
             ))}
           </nav>
         </div>

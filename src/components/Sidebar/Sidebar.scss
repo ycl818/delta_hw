@@ -22,10 +22,10 @@
   opacity: 0.5;
 }
 
-
 .hamburger-react {
   right: 3px !important;
 }
+
 .sidebar__button {
   background: transparent;
   border: 0;
@@ -125,4 +125,6 @@
 
 
 
-
+.sidebar__link {
+  text-decoration: none;
+}
