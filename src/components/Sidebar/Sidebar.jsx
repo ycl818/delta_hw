@@ -13,7 +13,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const links = [
-  { name: "概觀", icon: <RxDashboard />, linkName: "summarize" },
+  { name: "概觀", icon: <RxDashboard />, linkName: "" },
   {
     name: "餘電匹配分析",
     icon: <MdInsertChart />,
@@ -42,13 +42,7 @@ export const Sidebar = ({ isOpen, setOpen }) => {
       <nav className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar__inner">
           <nav className="sidebar__menu">
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
+            <div className="sidebar__header-wrapper">
               <div className="sidebar__header" onClick={() => setOpen(!isOpen)}>
                 <MdElectricBolt className="sidebar__header-icon" />
                 <p>綠電匹配服務</p>
@@ -58,12 +52,12 @@ export const Sidebar = ({ isOpen, setOpen }) => {
                 label="Show menu"
                 duration={0.8}
                 rounded
-                size={17}
+                size={12}
                 toggled={isOpen}
                 toggle={setOpen}
               />
             </div>
-            <hr className="sidebar__horizon" />
+            {/* <hr className="sidebar__horizon" /> */}
             {links.map((item, idx) => (
               <Link className="sidebar__link" to={`${item.linkName}`}>
                 <button

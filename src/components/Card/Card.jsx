@@ -14,6 +14,9 @@ const Card = ({
   chartHeight,
   options,
   data,
+  footerLabel,
+  guageValue,
+  guageColor,
 }) => {
   // const RenderChart = () => {
   //   switch (chartType) {
@@ -58,6 +61,9 @@ const Card = ({
           height={chartHeight}
           data={data}
           options={options}
+          footerLabel={footerLabel}
+          guageValue={guageValue}
+          guageColor={guageColor}
         />
       </div>
     </div>

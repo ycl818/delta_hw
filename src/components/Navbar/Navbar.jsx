@@ -15,12 +15,12 @@ const Navbar = ({ isOpen }) => {
             Monitor progress regularity to increase sales
           </p>
         </div>
+      </div>
 
-        <div className="navbar__rightGroup">
-          <Searchbar />
-          <NotificationBell />
-          <Avatar />
-        </div>
+      <div className="navbar__rightGroup">
+        <Searchbar />
+        <NotificationBell />
+        <Avatar />
       </div>
     </div>
   );

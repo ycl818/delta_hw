@@ -1,12 +1,17 @@
 .navbar__container {
-  position: relative;
+  position: fixed;
   color: var(--gray-color);
   height: 3rem;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--white-color);
   //border: 1px solid var(--gray-color);
   transition: all 0.3s ease;
   left: 60px;
   width: calc(100% - 60px);
- 
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar__container.shrink {
@@ -18,17 +23,30 @@
 .navbar__leftGroup {
   display: flex;
   justify-content: space-between;
+  padding-left: 1.2rem;
 
   .pageTitle {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .pageTitle-big {
+    font-weight: bold;
+    color: var(--black-color);
+    font-size: larger;
+    margin-top: 0.1rem;
+  }
+
+  .pageTitle-small {
+    margin-top: 0.2rem;
+  }
 }
+
+
 
 .navbar__rightGroup {
   display: flex;
   align-items: center;
   gap: 1rem;
-  // margin-right: 1rem;
+  margin-right: 1rem;
 }

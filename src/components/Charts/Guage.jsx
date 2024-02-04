@@ -1,27 +1,52 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-const Guage = () => {
+const Guage = ({ footerLabel, guageValue, guageColor }) => {
   const state = {
-    series: [55, 20],
+    series: [
+      {
+        name: "elec",
+        data: [guageValue],
+        color: "#9C27B0",
+      },
+    ],
     chartOptions: {
-      labels: [],
+      labels: [""],
     },
-
+    labels: ["eke"],
     options: {
       // title: {
       //   text: "Data Quality Index",
       // },
+
       chart: {
-        type: "donut",
+        type: "radialBar",
+      },
+      tooltip: {
+        fillSeriesColor: true,
       },
       dataLabels: {
         enabled: false,
+        style: {
+          colors: [guageColor],
+        },
+      },
+      fill: {
+        colors: [guageColor],
+      },
+      legend: {
+        labels: {
+          colors: [guageColor],
+        },
+        markers: {
+          fillColors: [guageColor],
+        },
       },
       plotOptions: {
         pie: {
           offsetX: 50,
           offsetY: 25,
+
           donut: {
             labels: {
               show: true,
@@ -29,6 +54,7 @@ const Guage = () => {
                 show: true,
                 fontSize: "30px",
                 fontFamily: "Raleway",
+                color: "#9C27B0",
               },
               value: {
                 show: true,
@@ -36,7 +62,7 @@ const Guage = () => {
               total: {
                 show: true,
                 showAlways: true,
-                label: "Currently",
+                label: "Currently %",
                 color: "black",
               },
             },
@@ -50,11 +76,12 @@ const Guage = () => {
     <div className="donut">
       <Chart
         options={state.options}
-        series={state.series}
+        series={state.series[0].data}
         labels={state.chartOptions.labels}
         type="donut"
         width="100%"
       />
+      <div>{footerLabel}</div>
     </div>
   );
 };

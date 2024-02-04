@@ -2,8 +2,24 @@ import React from "react";
 import { Chart } from "react-google-charts";
 import Guage from "./Guage";
 
-const ChartDisplay = ({ chartType, height, data, options, chartEvents }) => {
-  if (chartType === "guageCircle") return <Guage />;
+const ChartDisplay = ({
+  chartType,
+  height,
+  data,
+  options,
+  chartEvents,
+  footerLabel,
+  guageValue,
+  guageColor,
+}) => {
+  if (chartType === "guageCircle")
+    return (
+      <Guage
+        footerLabel={footerLabel}
+        guageValue={guageValue}
+        guageColor={guageColor}
+      />
+    );
   if (chartType === "GeoChart")
     return (
       <Chart
@@ -21,14 +37,14 @@ const ChartDisplay = ({ chartType, height, data, options, chartEvents }) => {
         ]}
         chartType="GeoChart"
         width="100%"
-        height="400px"
+        height={height}
         data={data}
       />
     );
 
   return (
     <Chart
-      // chartEvents={chartEvents}
+      chartEvents={chartEvents}
       chartType={chartType}
       width="100%"
       height={height}

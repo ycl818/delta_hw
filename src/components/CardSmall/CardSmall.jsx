@@ -9,6 +9,7 @@ const CardSmall = ({
   bodyValue,
   footerText,
   footerValue,
+  isRaise,
 }) => {
   return (
     <div className="cardSmall__wrapper">
@@ -20,7 +21,7 @@ const CardSmall = ({
       </div>
       <div className="cardSmall__body">
         <div className="cardSmall__body-value">{value}</div>
-        <div className="cardSmall__body-judge">
+        <div className={`cardSmall__body-judge  ${isRaise ? "green" : "red"}`}>
           <div className="cardSmall__body-judge__icon">{bodyIcon}</div>
           <div className="cardSmall__body-judge__value">{bodyValue}</div>
         </div>

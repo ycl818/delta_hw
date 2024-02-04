@@ -4,12 +4,14 @@
   padding: 1rem;
   margin-bottom: 1rem;
   letter-spacing: 1px;
-  min-width: 283px;
+  min-width: 200px;
+  max-width: 400px;
 }
 
 .cardSmall__header {
   display: flex;
   justify-content: space-between;
+  padding: 0.1rem;
 }
 
 .cardSmall__body {
@@ -17,10 +19,12 @@
   justify-content: space-between;
   margin-top: 1rem;
   align-items: center;
+ 
 
   .cardSmall__body-value {
     font-weight: bold;
     font-size: 1.5rem;
+    color: var(--black-color);
   }
 
   
@@ -28,7 +32,24 @@
 
 .cardSmall__body-judge {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--judge-drop-background-color);
+  color: var( --judge-drop-font-color);
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+
+
+  
+  .cardSmall__body-judge__icon {
+    font-size: medium;
+    margin-top: 0.2rem;
+  }
+}
+
+.cardSmall__body-judge.green {
+  background-color: var(--judge-raise-background-color);
+  color: var( --judge-raise-font-color);
 }
 
 
@@ -36,4 +57,18 @@
   display: flex;
   gap: 0.5rem;
   margin-top: 0.5rem;
+}
+
+
+@media screen and (max-width: 683px) {
+  .cardSmall__wrapper {
+  min-width: 350px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cardSmall__wrapper {
+    max-width: 500px;
+  }
+
 }

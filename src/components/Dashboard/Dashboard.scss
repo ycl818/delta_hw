@@ -4,8 +4,11 @@
   background-color: var(--dashboard-color);
   min-height: calc(100vh - 3rem);
   width: calc(100% - 60px);
-  padding: 1.2rem;
-  overflow-x: hidden
+  padding: 2rem;
+  overflow-x: hidden;
+  padding-top: 4rem;
+  top: 3rem;
+
 }
 
 .dashboard__container.shrink {
@@ -17,4 +20,7 @@
 
 @media screen and (min-width: 1200px) {
   // 如果使用者之視窗寬度 >= 1200px，將會再載入這裡的 CSS。
+  .dashboard__container {
+    padding: 4rem;
+  }
 }

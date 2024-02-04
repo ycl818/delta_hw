@@ -25,7 +25,7 @@ function App() {
           path="/"
           element={<Dashboard setOpen={setOpen} isOpen={isOpen} />}
         >
-          <Route path="/summarize" element={<SummarizePage />} />
+          <Route index element={<SummarizePage />} />
           <Route
             path="/power-flow-analyzer"
             element={<PowerFlowAnalyzerPage />}
