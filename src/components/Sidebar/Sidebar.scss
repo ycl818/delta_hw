@@ -125,6 +125,10 @@
 .sidebar__menu {
   display: grid;
   padding: 0 10px 10px 10px;
+
+  a.active {
+    color: red;
+  }
 }
 
 
@@ -139,6 +143,18 @@
   text-decoration: none;
 }
 
+.sidebar__link:hover {
+  text-decoration: none;
+}
+
+.sidebar__link.active {
+
+  .sidebar__button {
+    color: var(--select-color);
+  }
+  
+}
+
 
 @media screen and (max-height: 767px) {
   // 如果使用者之視窗寬度 <= 768px，將會再載入這裡的 CSS。
@@ -146,4 +162,16 @@
     height: 40px;
     
   }
+}
+
+@media screen and (max-device-width: 480px) {
+  .sidebar.open {
+      z-index: 1000;
+      width: 480px;
+    .sidebar__inner {
+      width: 100%;
+    }
+  }
+
+
 }

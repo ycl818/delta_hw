@@ -55,22 +55,13 @@
 }
 
 
-@media screen and (max-width: 1200px) {
+
+@media screen and (max-width: 480px) {
   .summarizePage__group1 {
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+    padding: 0rem;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .summarizePage__group0 {
-    /* flex-direction: column; */
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-}
 
 
 @media screen and (max-width: 870px) {
@@ -78,3 +69,26 @@
     flex-direction: column;
   }
 }
+
+
+
+
+// 小於1201
+@media screen and (max-width: 1200px) {
+  .summarizePage__group1 {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .summarizePage__group0 {
+    /* flex-direction: column; */
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+
+
+

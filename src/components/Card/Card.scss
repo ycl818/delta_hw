@@ -11,7 +11,14 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
+
+  
+  
 }
+
+// .css-13cymwt-control {
+//   min-height: 20px !important;
+// }
 
 .card__wrapper {
   display: "flex";
@@ -23,6 +30,13 @@
   position: relative;
   bottom: 0;
 }
+
+@media screen and (max-width: 480px) {
+  .card__wrapper {
+    padding: 1rem 0 0 0 ;
+  }
+}
+
 
 
 @media (max-width: 600px) {
@@ -43,8 +57,8 @@
   }
 }
 
+
 @media screen and (min-width: 1200px) {
-  // 如果使用者之視窗寬度 >= 1200px，將會再載入這裡的 CSS。
   .card__wrapper {
     width: 50%;
   }

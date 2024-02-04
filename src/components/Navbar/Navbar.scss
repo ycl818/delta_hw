@@ -50,3 +50,11 @@
   gap: 1rem;
   margin-right: 1rem;
 }
+
+
+
+@media screen and (max-device-width: 480px) {
+  .pageTitle {
+    font-size: smaller;
+  }
+}

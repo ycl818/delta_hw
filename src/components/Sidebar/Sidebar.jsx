@@ -10,7 +10,7 @@ import { PiShareNetworkLight } from "react-icons/pi";
 import { IoHelpCircleOutline } from "react-icons/io5";
 import { CiSettings } from "react-icons/ci";
 import { IoLogOutOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const links = [
   { name: "概觀", icon: <RxDashboard />, linkName: "" },
@@ -37,6 +37,11 @@ const links = [
 ];
 
 export const Sidebar = ({ isOpen, setOpen }) => {
+  const { pathname } = useLocation();
+
+  const pathName = pathname.split("/")[1];
+  console.log("🚀 ~ Sidebar ~ pathName:", pathName);
+
   return (
     <>
       <nav className={`sidebar ${isOpen ? "open" : ""}`}>
@@ -59,11 +64,18 @@ export const Sidebar = ({ isOpen, setOpen }) => {
             </div>
             {/* <hr className="sidebar__horizon" /> */}
             {links.map((item, idx) => (
-              <Link className="sidebar__link" to={`${item.linkName}`}>
+              <Link
+                key={item.name}
+                className={`sidebar__link ${
+                  pathName === item.linkName ? "active" : ""
+                }`}
+                to={`${item.linkName}`}
+              >
                 <button
                   key={item.name}
                   type="button"
                   className={`sidebar__button sidebar__button-${idx}`}
+                  onClick={() => setOpen(false)}
                 >
                   <span>{item.icon}</span>
                   <p>{item.name}</p>

@@ -50,7 +50,11 @@ const Card = ({
         {icon ? (
           <BsThreeDots />
         ) : (
-          <Select options={selctOptions} placeholder={selctOptions[0].label} />
+          <Select
+            className="card__selector"
+            options={selctOptions}
+            placeholder={selctOptions[0].label}
+          />
         )}
       </div>
 
