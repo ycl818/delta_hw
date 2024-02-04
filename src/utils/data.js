@@ -49,17 +49,20 @@ export const SankeyData = [
 ];
 
 export const BarData = [
-  ["Year", "Sales", "Expenses", "Profit"],
-  ["2014", 1000, 400, 200],
-  ["2015", 1170, 460, 250],
-  ["2016", 660, 1120, 300],
-  ["2017", 1030, 540, 350],
+  ["Day", "Sales"],
+  ["S", 10000],
+  ["M", 3500],
+  ["T", 5600],
+  ["W", 6200],
+  ["T", 4000],
+  ["F", 2030],
+  ["S", 6830],
 ];
 
 export const BarOptions = {
   chart: {
-    title: "Company Performance",
-    subtitle: "Sales, Expenses, and Profit: 2014-2017",
+    title: "kWh 3,701 -20%",
+    // subtitle: "Sales, Expenses, and Profit: 2014-2017",
   },
   animation: {
     startup: true,
@@ -77,4 +80,43 @@ export const GeoData = [
   ["Canada", 500],
   ["France", 600],
   ["RU", 700],
+];
+
+export const ComposeData = [
+  {
+    name: "Page A",
+    uv: 590,
+    pv: 800,
+    amt: 1400,
+  },
+  {
+    name: "Page B",
+    uv: 868,
+    pv: 967,
+    amt: 1506,
+  },
+  {
+    name: "Page C",
+    uv: 1397,
+    pv: 1098,
+    amt: 989,
+  },
+  {
+    name: "Page D",
+    uv: 1480,
+    pv: 1200,
+    amt: 1228,
+  },
+  {
+    name: "Page E",
+    uv: 1520,
+    pv: 1108,
+    amt: 1100,
+  },
+  {
+    name: "Page F",
+    uv: 1400,
+    pv: 680,
+    amt: 1700,
+  },
 ];

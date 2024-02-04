@@ -58,18 +58,18 @@ const Card = ({
         )}
       </div>
 
-      <div className="card__chart">
-        {/* <RenderChart /> */}
-        <ChartDisplay
-          chartType={chartType}
-          height={chartHeight}
-          data={data}
-          options={options}
-          footerLabel={footerLabel}
-          guageValue={guageValue}
-          guageColor={guageColor}
-        />
-      </div>
+      {/* <div className="card__chart"> */}
+      {/* <RenderChart /> */}
+      <ChartDisplay
+        chartType={chartType}
+        height={chartHeight}
+        data={data}
+        options={options}
+        footerLabel={footerLabel}
+        guageValue={guageValue}
+        guageColor={guageColor}
+      />
+      {/* </div> */}
     </div>
   );
 };

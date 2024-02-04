@@ -1,6 +1,7 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 import Guage from "./Guage";
+import ComposeChart from "./ComposeChart";
 
 const ChartDisplay = ({
   chartType,
@@ -12,6 +13,8 @@ const ChartDisplay = ({
   guageValue,
   guageColor,
 }) => {
+  console.log("🚀 ~ chartType:", chartType);
+  if (chartType === "composeChart") return <ComposeChart data={data} />;
   if (chartType === "guageCircle")
     return (
       <Guage

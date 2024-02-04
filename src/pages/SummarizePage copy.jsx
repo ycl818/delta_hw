@@ -3,18 +3,19 @@ import CardSmall from "../components/CardSmall/CardSmall";
 import { BarData, BarOptions, GeoData, SankeyData } from "../utils/data";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import "./pageStyles/PowerFlowAnalyzerPage.scss";
+
+import "./pageStyles/SummarizePage.scss";
 import DateSelector from "../components/DateSelector/DateSelector";
 
-const PowerFlowAnalyzerPage = () => {
+const SummarizePage = () => {
   return (
     <div>
-      <div className="PowerFlowAnalyzerPage__flex">
+      <div className="summarizePage__flex">
         <DateSelector />
-        <button className="PowerFlowAnalyzerPage__exportBtn">Export</button>
+        <button className="summarizePage__exportBtn">Export</button>
       </div>
 
-      <div className="PowerFlowAnalyzerPage__group0">
+      <div className="summarizePage__group0">
         <CardSmall
           cardTitle={"平均月轉供電量"}
           value={"kWh 111,019"}
@@ -53,7 +54,7 @@ const PowerFlowAnalyzerPage = () => {
           isRaise={false}
         />
       </div>
-      <div className="PowerFlowAnalyzerPage__group1">
+      <div className="summarizePage__group1">
         <Card
           width={"calc(45%)"}
           height={300}
@@ -62,7 +63,7 @@ const PowerFlowAnalyzerPage = () => {
           chartHeight={200}
           data={SankeyData}
         />
-        <div className="PowerFlowAnalyzerPage__group1-2">
+        <div className="summarizePage__group1-2">
           <Card
             width={"calc(22.5%)"}
             height={300}
@@ -83,7 +84,7 @@ const PowerFlowAnalyzerPage = () => {
           />
         </div>
       </div>
-      <div className="PowerFlowAnalyzerPage__group2">
+      <div className="summarizePage__group2">
         <Card
           width={"calc(45%)"}
           height={300}
@@ -109,4 +110,4 @@ const PowerFlowAnalyzerPage = () => {
   );
 };
 
-export default PowerFlowAnalyzerPage;
+export default SummarizePage;

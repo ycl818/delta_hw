@@ -24,16 +24,19 @@
   display: "flex";
   background-color: var(--white-color);
   padding: 1rem 1rem 0 1rem;
+  min-height: 350px;
 }
 
-.card__chart {
-  position: relative;
-  bottom: 0;
-}
+// .card__chart {
+//   position: relative;
+//   bottom: 0;
+ 
+// }
 
 @media screen and (max-width: 480px) {
   .card__wrapper {
     padding: 1rem 0 0 0 ;
+    min-width: 300px !important;
   }
 }
 

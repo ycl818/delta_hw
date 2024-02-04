@@ -1,0 +1,62 @@
+.cardWithIcon__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(25%);
+  gap: 1rem;
+  background-color: var(--white-color);
+  min-width: 260px;
+  max-width: 400px;
+  border-radius: 5px;
+ 
+  letter-spacing: 1px;
+  padding: 1rem;
+  // margin-bottom: 1rem;
+}
+
+.cardWithIcon__icon {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 0.7rem;
+  color: rgb(236, 173, 27);
+  font-size: medium;
+}
+
+.cardWithIcon__body-title {
+  color: var(--gray-color);
+ margin-top: 1rem;
+}
+
+.flex__wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cardWithIcon__body-value {
+  font-weight: bold;
+  font-size: large;
+}
+
+.cardWithIcon__body-judge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: var(--judge-drop-background-color);
+  color: var( --judge-drop-font-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  min-width: 66px;
+  gap: rem;
+
+  
+  .cardWithIcon__body-judge__icon {
+    font-size: 24px;
+    margin-top: 0.2rem;
+  }
+}
+
+.cardWithIcon__body-judge.green {
+  // background-color: var(--judge-raise-background-color);
+  color: var( --judge-raise-font-color);
+}

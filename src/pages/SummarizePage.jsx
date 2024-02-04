@@ -1,112 +1,86 @@
-import Card from "../components/Card/Card";
-import CardSmall from "../components/CardSmall/CardSmall";
-import { BarData, BarOptions, GeoData, SankeyData } from "../utils/data";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { AiOutlineArrowUp } from "react-icons/ai";
-
+import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import "./pageStyles/SummarizePage.scss";
-import DateSelector from "../components/DateSelector/DateSelector";
+import CardWithIcon from "../components/CardWithIcon/CardWithIcon";
+import Card from "../components/Card/Card";
+import { BarData, BarOptions, ComposeData } from "../utils/data";
+import BasicTable from "../components/Table/BasicTable";
+import CardGreenPowerSummarize from "../components/CardGreenPowerSummarize/CardGreenPowerSummarize";
 
 const SummarizePage = () => {
   return (
-    <div>
-      <div className="summarizePage__flex">
-        <DateSelector />
-        <button className="summarizePage__exportBtn">Export</button>
-      </div>
-
-      <div className="summarizePage__group0">
-        <CardSmall
-          cardTitle={"平均月轉供電量"}
-          value={"kWh 111,019"}
-          bodyIcon={<AiOutlineArrowDown />}
-          bodyValue={"5.9%"}
-          footerText={"過去一個月"}
-          footerValue={"110,105 M"}
-          isRaise={false}
-        />
-        <CardSmall
-          cardTitle={"平均月用電量"}
-          value={"kWh 105,468"}
-          bodyIcon={<AiOutlineArrowDown />}
-          bodyValue={"0.5%"}
-          footerText={"過去一個月"}
-          footerValue={"110,241"}
-          isRaise={false}
-        />
-
-        <CardSmall
-          cardTitle={"總轉供電量"}
-          value={"kWh 666,117"}
-          bodyIcon={<AiOutlineArrowUp />}
-          bodyValue={"1.2%"}
-          footerText={"過去一個月"}
-          footerValue={"97697"}
-          isRaise={true}
-        />
-        <CardSmall
-          cardTitle={"總用電量"}
-          value={"kWh 880554"}
-          bodyIcon={<AiOutlineArrowDown />}
-          bodyValue={"2%"}
-          footerText={"過去一個月"}
-          footerValue={"146,759"}
-          isRaise={false}
-        />
-      </div>
+    <>
       <div className="summarizePage__group1">
-        <Card
-          width={"calc(45%)"}
-          height={300}
-          cardTitle={"月結轉供電量"}
-          chartType={"Sankey"}
-          chartHeight={200}
-          data={SankeyData}
+        <CardWithIcon
+          cardIcon={<MdOutlineShoppingCartCheckout />}
+          bodyTitle={"年轉供電量"}
+          bodyBigValue={"kWh 1,332,234"}
+          isRaise={true}
+          bodyValue={"12%"}
+          bodyIcon={<AiOutlineArrowUp />}
+          iconColor={"#FFFAE9"}
         />
-        <div className="summarizePage__group1-2">
-          <Card
-            width={"calc(22.5%)"}
-            height={300}
-            cardTitle={"總餘電率 %"}
-            chartType={"guageCircle"}
-            footerLabel={"總供電量: 666.117kWh"}
-            guageValue={10.8}
-            guageColor={"#5FA3F8"}
-          />
-          <Card
-            width={"calc(22.5%)"}
-            height={300}
-            cardTitle={"總 RE %"}
-            chartType={"guageCircle"}
-            footerLabel={"總用電: 880,554kWh"}
-            guageValue={88.9}
-            guageColor={"#49DE80"}
-          />
-        </div>
+        <CardWithIcon
+          cardIcon={<MdOutlineShoppingCartCheckout />}
+          bodyTitle={"年總用電量"}
+          bodyBigValue={"kWh 1,761,109"}
+          isRaise={true}
+          bodyValue={"35%"}
+          bodyIcon={<AiOutlineArrowUp />}
+          iconColor={"#E9F5FF"}
+        />
+        <CardWithIcon
+          cardIcon={<MdOutlineShoppingCartCheckout />}
+          bodyTitle={"餘電電費"}
+          bodyBigValue={"$333,058"}
+          isRaise={true}
+          bodyValue={"-5%"}
+          bodyIcon={<AiOutlineArrowDown />}
+          iconColor={"#FCF0F5"}
+        />
+        <CardWithIcon
+          cardIcon={<MdOutlineShoppingCartCheckout />}
+          bodyTitle={"成本"}
+          bodyBigValue={"$6,661,170"}
+          isRaise={true}
+          // bodyValue={"12%"}
+          // bodyIcon={<AiOutlineArrowUp />}
+          iconColor={"#F4FAFA"}
+        />
       </div>
       <div className="summarizePage__group2">
         <Card
-          width={"calc(45%)"}
+          width={"calc(60%)"}
           height={300}
-          cardTitle={"綠色分析"}
+          cardTitle={"Power Mix (kW)"}
+          chartType={"composeChart"}
+          chartHeight={200}
+          data={ComposeData}
+          // options={BarOptions}
+          icon={true}
+        />
+        <Card
+          width={"calc(30%)"}
+          height={300}
+          cardTitle={"轉供電量"}
           chartType={"Bar"}
           chartHeight={200}
           data={BarData}
           options={BarOptions}
-          icon={true}
-        />
-
-        <Card
-          width={"calc(45%)"}
-          height={300}
-          cardTitle={"全球綠電"}
-          chartType={"GeoChart"}
-          chartHeight={200}
-          data={GeoData}
-          icon={true}
+          icon={false}
         />
       </div>
-    </div>
+
+      <div className="summarizePage__group3">
+        <div className="summarizePage__group3-eletricData">
+          <BasicTable />
+        </div>
+        <div className="summarizePage__group3-greenPowerSummarize">
+          <CardGreenPowerSummarize />
+        </div>
+      </div>
+    </>
   );
 };
 
