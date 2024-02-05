@@ -1,6 +1,6 @@
 import React from "react";
 import useAuth from "../../hooks/useAuth";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const RequireAuth = () => {
   const { auth } = useAuth();
@@ -8,7 +8,7 @@ const RequireAuth = () => {
   const location = useLocation();
 
   return auth?.mail ? (
-    <Navigate to="/" state={{ from: location }} replace />
+    <Outlet />
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />
   );
