@@ -26,7 +26,7 @@ const RequireAuth = () => {
     };
 
     getUser();
-  }, []);
+  }, [setAuth]);
 
   return auth?.mail ? (
     <Outlet />
