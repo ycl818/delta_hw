@@ -4,7 +4,7 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import axios from "../../api/axios";
 
 const RequireAuth = () => {
-  const { auth } = useAuth();
+  const { auth, setAuth } = useAuth();
   console.log("🚀 ~ RequireAuth ~ auth:", auth);
   const location = useLocation();
 
@@ -15,8 +15,11 @@ const RequireAuth = () => {
           withCredentials: true,
         });
         console.log("🚀 ~ getUser ~ response:", response);
-        // const mail =
-        // setAuth()
+        const username = response.data?.user?.name;
+        const mail = response.data?.user?.account;
+        const userphoto = response.data?.user?.photo;
+
+        setAuth({ username, mail, userphoto });
       } catch (error) {
         console.log("🚀 ~ getUser ~ error:", error);
       }
