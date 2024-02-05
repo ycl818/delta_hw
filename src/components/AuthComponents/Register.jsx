@@ -101,10 +101,7 @@ const Register = () => {
   };
 
   const signUpGoogle = () => {
-    window.open(
-      `${process.env.REACT_APP_BACKEND_URL}/auth/google/redirect`,
-      "_self"
-    );
+    window.open(`${process.env.REACT_APP_BACKEND_URL}/auth/google`, "_self");
   };
 
   return (
