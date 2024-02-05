@@ -22,12 +22,12 @@ const PersistLogin = () => {
     };
 
     !auth?.accessToken ? verifyRefreshToken() : setIsLoading(false);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    console.log(`isLoading: ${isLoading}`);
-    console.log(`aT: ${JSON.stringify(auth?.accessToken)}`);
-  }, [isLoading]);
+  // useEffect(() => {
+  //   console.log(`isLoading: ${isLoading}`);
+  //   console.log(`aT: ${JSON.stringify(auth?.accessToken)}`);
+  // }, [isLoading]);
 
   return <>{isLoading ? <PuffLoader /> : <Outlet />}</>;
 };
