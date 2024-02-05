@@ -3,6 +3,7 @@ import "./Login.scss";
 import "./Form.scss";
 import axios from "../../api/axios";
 import useAuth from "../../hooks/useAuth";
+import { MdElectricBolt } from "react-icons/md";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CiLock } from "react-icons/ci";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -68,7 +69,7 @@ const Login = () => {
   };
 
   return (
-    <div className="form__wrapper">
+    <div className="loginform__wrapper">
       <p
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
@@ -76,8 +77,12 @@ const Login = () => {
       >
         {errMsg}
       </p>
-      <div className="form__details">
-        <p className="form__details-title">綠電匹配服務</p>
+      <div className="loginform__details">
+        <div className="loginform__details-icon">
+          <MdElectricBolt />
+        </div>
+
+        <p className="loginform__details-title">綠電匹配服務</p>
       </div>
       <form className="login__textfields" onSubmit={handleSubmit}>
         <p className="login__textfields-title">Sign in</p>

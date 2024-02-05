@@ -5,7 +5,7 @@ import { GoStop } from "react-icons/go";
 import axios from "../../api/axios";
 import { Link } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
-import { MdOutlineMailOutline } from "react-icons/md";
+import { MdElectricBolt, MdOutlineMailOutline } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 
 const USER_REGEX = /^[a-zA-Z][A-z0-9-_]{3,23}$/; // 4~24
@@ -103,6 +103,9 @@ const Register = () => {
   return (
     <div className="form__wrapper">
       <div class="form__details">
+        <div className="form__details-icon">
+          <MdElectricBolt />
+        </div>
         <p className="form__details-title">綠電匹配服務</p>
       </div>
       {success ? (

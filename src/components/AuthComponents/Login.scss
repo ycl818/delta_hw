@@ -1,7 +1,41 @@
+.loginform__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loginform__details {
+  width: 500px;
+  height: 680px;
+  // border: 1px solid black;
+  background-color: #0061F4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  .loginform__details-icon {
+    background-color: var(--white-color);
+    padding: 0.1rem;
+    border-radius: 2px;
+    color: #0061F4;
+    margin-top: 2px;
+  }
+  .loginform__details-title {
+    padding: 0.5rem;
+    font-size: larger;
+  }
+  .loginform__details-image {
+    object-fit: cover;
+  }
+}
+
 .login__textfields {
   width: 380px;
-  height: 650px;
-  border: 1px solid black;
+  height: 680px;
+  // border: 1px solid black;
   padding: 3rem;
 
   .login__textfields-title {
@@ -47,4 +81,49 @@
   width: 100%;
   text-align: center;
   margin-top: 1rem;
+}
+
+@media screen and (max-device-width: 480px) {
+  .loginform__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .login__textfields  {
+    height: auto;
+  }
+  .loginform__details {
+    max-height: 200px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .login__textfields, .loginform__details {
+    width: 90%;
+    max-width: 400px; 
+    // height: auto;
+    padding: 2rem;
+  }
+
+  .login__textfields-email,
+  .login__textfields-password {
+    margin-bottom: 1.5rem; 
+  }
+
+  .login__textfields-email_wrapper,
+  .login__textfields-password_wrapper {
+    max-width: 100%;
+  }
+
+  .login__btn {
+    margin-top: 1.5rem; 
+  }
+}
+
+/* Tablet and larger screens */
+@media screen and (min-width: 768px) {
+  .login__textfields, .loginform__details {
+    width: 60%;
+    max-width: 500px;
+    height: 680px; 
+  }
 }
