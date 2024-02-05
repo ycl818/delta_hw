@@ -9,12 +9,13 @@ const CardWithIcon = ({
   bodyValue,
   bodyIcon,
   iconColor,
+  iconFontColor,
 }) => {
   return (
     <div className="cardWithIcon__wrapper">
       <div
         className="cardWithIcon__icon"
-        style={{ backgroundColor: iconColor }}
+        style={{ backgroundColor: iconColor, color: iconFontColor }}
       >
         {cardIcon}
       </div>

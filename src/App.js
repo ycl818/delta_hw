@@ -12,15 +12,24 @@ import OptiTransferPage from "./pages/OptiTransferPage";
 import HelpPage from "./pages/HelpPage";
 import SettingPage from "./pages/SettingPage";
 import OptiAgreement from "./pages/OptiAgreement";
+import Login from "./components/AuthComponents/Login";
+import Register from "./components/AuthComponents/Register";
+// import RequireAuth from "./components/AuthComponents/RequireAuth";
+import useAuth from "./hooks/useAuth";
 
 function App() {
   const [isOpen, setOpen] = useState(false);
 
+  const { auth } = useAuth();
+
   return (
     <div className="App">
-      <Navbar setOpen={setOpen} isOpen={isOpen} />
-      <Sidebar isOpen={isOpen} setOpen={setOpen} />
+      {auth?.accessToken && <Navbar setOpen={setOpen} isOpen={isOpen} />}
+      {auth?.accessToken && <Sidebar isOpen={isOpen} setOpen={setOpen} />}
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
         <Route
           path="/"
           element={<Dashboard setOpen={setOpen} isOpen={isOpen} />}
