@@ -16,6 +16,7 @@ import Login from "./components/AuthComponents/Login";
 import Register from "./components/AuthComponents/Register";
 // import RequireAuth from "./components/AuthComponents/RequireAuth";
 import useAuth from "./hooks/useAuth";
+import RequireAuth from "./components/AuthComponents/RequireAuth";
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -24,28 +25,29 @@ function App() {
 
   return (
     <div className="App">
-      {auth?.accessToken && <Navbar setOpen={setOpen} isOpen={isOpen} />}
-      {auth?.accessToken && <Sidebar isOpen={isOpen} setOpen={setOpen} />}
+      {auth?.mail && <Navbar setOpen={setOpen} isOpen={isOpen} />}
+      {auth?.mail && <Sidebar isOpen={isOpen} setOpen={setOpen} />}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
-        <Route
-          path="/"
-          element={<Dashboard setOpen={setOpen} isOpen={isOpen} />}
-        >
-          <Route index element={<SummarizePage />} />
+        <Route element={<RequireAuth />}>
           <Route
-            path="/power-flow-analyzer"
-            element={<PowerFlowAnalyzerPage />}
-          />
-          <Route path="/power-transfer" element={<PowerTransferPage />} />
+            path="/"
+            element={<Dashboard setOpen={setOpen} isOpen={isOpen} />}
+          >
+            <Route index element={<SummarizePage />} />
+            <Route
+              path="/power-flow-analyzer"
+              element={<PowerFlowAnalyzerPage />}
+            />
+            <Route path="/power-transfer" element={<PowerTransferPage />} />
 
-          <Route path="/essential-data" element={<EssentialDataPage />} />
-          <Route path="/opti-transfer" element={<OptiTransferPage />} />
-          <Route path="/opti-agreement" element={<OptiAgreement />} />
-          <Route path="/help" element={<HelpPage />} />
-          <Route path="/settings" element={<SettingPage />} />
+            <Route path="/essential-data" element={<EssentialDataPage />} />
+            <Route path="/opti-transfer" element={<OptiTransferPage />} />
+            <Route path="/opti-agreement" element={<OptiAgreement />} />
+            <Route path="/help" element={<HelpPage />} />
+            <Route path="/settings" element={<SettingPage />} />
+          </Route>
         </Route>
       </Routes>
     </div>

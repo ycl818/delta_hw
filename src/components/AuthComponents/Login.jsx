@@ -46,9 +46,9 @@ const Login = () => {
       );
       console.log(response);
       const accessToken = response?.data?.accessToken;
-      console.log("🚀 ~ handleSubmit ~ accessToken:", accessToken);
+      const username = response?.data?.username;
 
-      setAuth({ mail, accessToken });
+      setAuth({ mail, accessToken, username });
 
       setMail("");
       setPassword("");
@@ -76,7 +76,7 @@ const Login = () => {
       >
         {errMsg}
       </p>
-      <div class="form__details">
+      <div className="form__details">
         <p className="form__details-title">綠電匹配服務</p>
       </div>
       <form className="login__textfields" onSubmit={handleSubmit}>
