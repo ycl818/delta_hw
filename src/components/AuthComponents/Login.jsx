@@ -25,6 +25,7 @@ const Login = () => {
   // add user experience
   useEffect(() => {
     emailRef.current.focus();
+    console.log(process.env.REACT_APP_BACKEND_URL);
   }, []);
 
   // clear Errmsg when user type again
