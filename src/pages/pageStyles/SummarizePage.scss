@@ -11,7 +11,7 @@
   display: flex;
   gap: 5rem;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 0.5rem;
   overflow: hidden;
   min-width: calc(100% - 2rem);
@@ -22,7 +22,7 @@
   display: flex;
   gap: 5rem;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 0.5rem;
   overflow: hidden;
   min-width: calc(100% - 2rem);
@@ -32,22 +32,24 @@
   width: 60%;
   padding: 0.5rem;
   background-color:var(--white-color);
-  min-width: 350px;
+  min-width: 300px !important;
 }
 
 .summarizePage__group3-greenPowerSummarize {
   background-color: var(--white-color);
   width: 30%;
-  min-width: 350px;
+  min-width: 300px !important;
 }
 
 
 
 
 
-
-
-
+@media screen and (max-width: 1300px) {
+  .summarizePage__group2 ,.summarizePage__group3{
+    gap: 2rem;
+  }
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -55,4 +57,20 @@
     align-items: center;
     flex-wrap: wrap;
   }
+
+  .summarizePage__group2,.summarizePage__group3 {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .summarizePage__group3-greenPowerSummarize, .summarizePage__group3-eletricData {
+    min-width: 80%;
+  }
 }
+
+
+// @media screen and (max-width: 645px) {
+//   .summarizePage__group1 {
+//     min-width: 80%
+//   }
+// }

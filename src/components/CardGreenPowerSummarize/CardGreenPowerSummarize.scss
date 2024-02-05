@@ -24,7 +24,7 @@
     padding: 1rem;
     border-radius: 5px;
     min-width: 80px;
-    
+    color:var(--white-color)
   }
 
   .box1 {
@@ -39,16 +39,24 @@
   }
 
   .box1__icon, .box2__icon, .box3__icon {
-    border: 1px solid #C6D2E3;
-    border-radius: 50%;
-    padding: 1rem;
+    border: 1px solid  var(--white-color);
+    border-radius: 100%;
+    padding: .5rem;
     color: var(--white-color)
   }
 }
 
 .eletricfee {
   padding: 1rem;
+
+  .eletricfee__value {
+    color:  #6369F9;
+    font-weight: bold;
+    font-size: large;
+  }
 }
+
+
 
 .eletricfee__value-judge {
   display: flex;
@@ -59,19 +67,19 @@
   border-radius: 0.5rem;
   padding: 0.5rem;
   min-width: 66px;
-  gap: rem;
+  // gap: rem;
 
   
   .eletricfee__value-judge__icon {
-    font-size: 18px;
+    font-size: 14px;
     margin-top: 0.2rem;
-    color: var( --judge-raise-font-color);
+    color: #5BE49B;
   }
 }
 
 .eletricfee__value-judge__value {
   // background-color: var(--judge-raise-background-color);
-  color: var( --judge-raise-font-color);
+  color: #5BE49B;
 }
 
 .CardGreenPowerSummarize__group2-lineChart {
@@ -87,13 +95,33 @@
 }
 
 @media screen and (max-width: 480px) {
-  .box1, .box2, .box3 {
-    min-width: 80px;
+ 
+  .cardWithIcon__wrapper {
+    min-width: 320px;
   }
   .CardGreenPowerSummarize__group1 {
-    min-width: 300px;
+    min-width: 250px;
+    flex-direction: column;
+
+    .box1, .box2, .box3 {
+      min-width: 150px;
+      gap:1rem;
+
+    }
   }
   .CardGreenPowerSummarize__group2 {
-    min-width: 330px
+    min-width: 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+}
+
+@media screen and (min-width: 1200px) {
+  .cardWithIcon__wrapper {
+    max-width: 500px;
+    justify-content: center;
+    gap:2rem;
+  }
+  
 }

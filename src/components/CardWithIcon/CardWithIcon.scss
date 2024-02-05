@@ -20,6 +20,7 @@
   margin-top: 0.7rem;
   color: rgb(236, 173, 27);
   font-size: medium;
+  margin-left: 1rem;
 }
 
 .cardWithIcon__body-title {
@@ -31,6 +32,7 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: space-between;
 }
 
 .cardWithIcon__body-value {
@@ -59,4 +61,18 @@
 .cardWithIcon__body-judge.green {
   // background-color: var(--judge-raise-background-color);
   color: var( --judge-raise-font-color);
+}
+
+
+@media screen and (max-width: 645px) {
+  .cardWithIcon__body {
+    padding: 0rem 0.5rem;
+    min-width: 240px;
+  }
+  .cardWithIcon__wrapper {
+    min-width: 80%;
+    justify-content: center;
+    gap:2rem;
+    
+  }
 }
