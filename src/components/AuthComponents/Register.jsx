@@ -101,12 +101,10 @@ const Register = () => {
   };
 
   const signUpGoogle = () => {
-    try {
-      const response = axios.get("/auth/google");
-      console.log("🚀 ~ signUpGoogle ~ response:", response);
-    } catch (error) {
-      setErrMsg("google sign up faild");
-    }
+    window.open(
+      `${process.env.REACT_APP_BACKEND_URL}/auth/google/redirect`,
+      "_self"
+    );
   };
 
   return (
