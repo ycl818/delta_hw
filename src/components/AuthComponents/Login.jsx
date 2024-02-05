@@ -25,7 +25,6 @@ const Login = () => {
   // add user experience
   useEffect(() => {
     emailRef.current.focus();
-    console.log(process.env.REACT_APP_BACKEND_URL);
   }, []);
 
   // clear Errmsg when user type again
@@ -71,13 +70,6 @@ const Login = () => {
 
   return (
     <div className="loginform__wrapper">
-      <p
-        ref={errRef}
-        className={errMsg ? "errmsg" : "offscreen"}
-        aria-live="assertive"
-      >
-        {errMsg}
-      </p>
       <div className="loginform__details">
         <div className="loginform__details-icon">
           <MdElectricBolt />
@@ -121,6 +113,13 @@ const Login = () => {
         </div>
 
         <button className="login__btn">Sign In</button>
+        <p
+          ref={errRef}
+          className={errMsg ? "errmsg" : "offscreen"}
+          aria-live="assertive"
+        >
+          {errMsg}
+        </p>
         <p className="login__singupMsg">
           Need an Account? <br />
           <span>

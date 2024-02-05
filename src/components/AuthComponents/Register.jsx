@@ -100,6 +100,15 @@ const Register = () => {
     }
   };
 
+  const signUpGoogle = () => {
+    try {
+      const response = axios.get("/auth/google");
+      console.log("🚀 ~ signUpGoogle ~ response:", response);
+    } catch (error) {
+      setErrMsg("google sign up faild");
+    }
+  };
+
   return (
     <div className="form__wrapper">
       <div class="form__details">
@@ -272,7 +281,7 @@ const Register = () => {
           </div>
 
           <div className="register__oauthBtns">
-            <button className="register__googleBtn" onClick={() => {}}>
+            <button className="register__googleBtn" onClick={signUpGoogle}>
               <img
                 src="https://img.icons8.com/color/16/000000/google-logo.png"
                 alt="google icon"

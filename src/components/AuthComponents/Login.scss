@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
 }
 
 .loginform__details {
@@ -89,7 +89,7 @@
     flex-direction: column;
   }
   .login__textfields  {
-    height: auto;
+   max-height: 500px;
   }
   .loginform__details {
     max-height: 200px;
@@ -98,8 +98,8 @@
 
 @media only screen and (max-width: 767px) {
   .login__textfields, .loginform__details {
-    width: 90%;
-    max-width: 400px; 
+    width: 100%;
+    max-width: 479px; 
     // height: auto;
     padding: 2rem;
   }
