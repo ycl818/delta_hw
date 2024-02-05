@@ -11,7 +11,9 @@ const RequireAuth = () => {
   useLayoutEffect(() => {
     const getUser = async () => {
       try {
-        const response = axios.get("/login/success", { withCredentials: true });
+        const response = axios.get("/auth/login/success", {
+          withCredentials: true,
+        });
         console.log("🚀 ~ getUser ~ response:", response);
         // const mail =
         // setAuth()
