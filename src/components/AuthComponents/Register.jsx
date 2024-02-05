@@ -268,7 +268,9 @@ const Register = () => {
               </label>
             </div>
 
-            <button className="register__signupBtn">Sign Up</button>
+            <button type="submit" className="register__signupBtn">
+              Sign Up
+            </button>
             <p
               ref={errRef}
               className={errMsg ? "errmsg" : "offscreen"} // make it still availble to screen reader
@@ -280,30 +282,38 @@ const Register = () => {
               <hr />
               <span>or sign up with</span>
             </div>
-          </form>
-          <div className="register__oauthBtns">
-            <button className="register__googleBtn" onClick={signUpGoogle}>
-              <img
-                src="https://img.icons8.com/color/16/000000/google-logo.png"
-                alt="google icon"
-              />
-              <span>Google</span>
-            </button>
-            <button className="register__facebookBtn" onClick={() => {}}>
-              <img
-                src="https://img.icons8.com/color/16/000000/facebook.png"
-                alt="facebook icon"
-              />
-              <span>Facebook</span>
-            </button>
-          </div>
+            <div className="register__oauthBtns">
+              <button
+                type="button"
+                className="register__googleBtn"
+                onClick={signUpGoogle}
+              >
+                <img
+                  src="https://img.icons8.com/color/16/000000/google-logo.png"
+                  alt="google icon"
+                />
+                <span>Google</span>
+              </button>
+              <button
+                type="button"
+                className="register__facebookBtn"
+                onClick={() => {}}
+              >
+                <img
+                  src="https://img.icons8.com/color/16/000000/facebook.png"
+                  alt="facebook icon"
+                />
+                <span>Facebook</span>
+              </button>
+            </div>
 
-          <p className="register__footer">
-            Already have an account ?{" "}
-            <Link to="/login">
-              <span>Log In</span>
-            </Link>
-          </p>
+            <p className="register__footer">
+              Already have an account ?{" "}
+              <Link to="/login">
+                <span>Log In</span>
+              </Link>
+            </p>
+          </form>
         </>
       )}
     </div>
