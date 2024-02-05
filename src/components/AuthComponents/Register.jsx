@@ -125,161 +125,162 @@ const Register = () => {
           </p>
         </section>
       ) : (
-        <form className="register__textfields" onSubmit={handleSubmit}>
-          <p className="register__textfields-title">Sign Up For an Account</p>
-          <div className="register__textfields-username">
-            <div className="register__textfields-username_wrapper">
-              <div>
-                <span className={validName ? "valid" : "hide"}>
-                  <GoCheckCircle />
-                </span>
-                <span className={validName || !user ? "hide" : "invalid"}>
-                  <GoXCircle />
-                </span>
+        <>
+          <form className="register__textfields" onSubmit={handleSubmit}>
+            <p className="register__textfields-title">Sign Up For an Account</p>
+            <div className="register__textfields-username">
+              <div className="register__textfields-username_wrapper">
+                <div>
+                  <span className={validName ? "valid" : "hide"}>
+                    <GoCheckCircle />
+                  </span>
+                  <span className={validName || !user ? "hide" : "invalid"}>
+                    <GoXCircle />
+                  </span>
+                </div>
+                <label htmlFor="username">
+                  <span>
+                    <CiUser />
+                  </span>
+                </label>
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="Username"
+                  ref={userRef}
+                  onChange={(e) => setUser(e.target.value)}
+                  value={user}
+                  required
+                  aria-invalid={validName ? "false" : "true"}
+                  aria-describedby="nameNote"
+                  onFocus={() => setUserFocus(true)}
+                  onBlur={() => setUserFocus(false)}
+                />
               </div>
-              <label htmlFor="username">
-                <span>
-                  <CiUser />
-                </span>
-              </label>
-              <input
-                id="username"
-                type="text"
-                placeholder="Username"
-                ref={userRef}
-                onChange={(e) => setUser(e.target.value)}
-                value={user}
-                required
-                aria-invalid={validName ? "false" : "true"}
-                aria-describedby="nameNote"
-                onFocus={() => setUserFocus(true)}
-                onBlur={() => setUserFocus(false)}
-              />
+              <p
+                id="nameNote"
+                className={
+                  userFocus && user && !validName ? "instructions" : "offscreen"
+                }
+              >
+                <GoStop />4 to 24 characters. Must begin with a a-z or A-Z.
+                Letters, numbers, underscores, hyphens are allowed.
+              </p>
             </div>
-            <p
-              id="nameNote"
-              className={
-                userFocus && user && !validName ? "instructions" : "offscreen"
-              }
-            >
-              <GoStop />4 to 24 characters. Must begin with a a-z or A-Z.
-              Letters, numbers, underscores, hyphens are allowed.
-            </p>
-          </div>
 
-          <div className="register__textfields-email">
-            <div className="register__textfields-email_wrapper">
-              <div>
-                <span className={validMail ? "valid" : "hide"}>
-                  <GoCheckCircle />
-                </span>
-                <span className={validMail || !mail ? "hide" : "invalid"}>
-                  <GoXCircle />
-                </span>
+            <div className="register__textfields-email">
+              <div className="register__textfields-email_wrapper">
+                <div>
+                  <span className={validMail ? "valid" : "hide"}>
+                    <GoCheckCircle />
+                  </span>
+                  <span className={validMail || !mail ? "hide" : "invalid"}>
+                    <GoXCircle />
+                  </span>
+                </div>
+                <label htmlFor="email">
+                  <span>
+                    <MdOutlineMailOutline />
+                  </span>
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  onChange={(e) => setMail(e.target.value)}
+                  value={mail}
+                  required
+                  aria-invalid={validMail ? "false" : "true"}
+                  aria-describedby="mailNote"
+                  onFocus={() => setMailFocus(true)}
+                  onBlur={() => setMailFocus(false)}
+                />
               </div>
-              <label htmlFor="email">
-                <span>
-                  <MdOutlineMailOutline />
-                </span>
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setMail(e.target.value)}
-                value={mail}
-                required
-                aria-invalid={validMail ? "false" : "true"}
-                aria-describedby="mailNote"
-                onFocus={() => setMailFocus(true)}
-                onBlur={() => setMailFocus(false)}
-              />
+              <p
+                id="mailNote"
+                className={
+                  mailFocus && mail && !validMail ? "instructions" : "offscreen"
+                }
+              >
+                <GoStop />
+                Please enter a valid email address.
+              </p>
             </div>
-            <p
-              id="mailNote"
-              className={
-                mailFocus && mail && !validMail ? "instructions" : "offscreen"
-              }
-            >
-              <GoStop />
-              Please enter a valid email address.
-            </p>
-          </div>
 
-          <div className="register__textfields-password">
-            <div className="register__textfields-password_wrapper">
-              <div>
-                <span className={validPwd ? "valid" : "hide"}>
-                  <GoCheckCircle />
-                </span>
-                <span className={validPwd || !pwd ? "hide" : "invalid"}>
-                  <GoXCircle />
-                </span>
+            <div className="register__textfields-password">
+              <div className="register__textfields-password_wrapper">
+                <div>
+                  <span className={validPwd ? "valid" : "hide"}>
+                    <GoCheckCircle />
+                  </span>
+                  <span className={validPwd || !pwd ? "hide" : "invalid"}>
+                    <GoXCircle />
+                  </span>
+                </div>
+                <label htmlFor="password">
+                  <span>
+                    <CiLock />
+                  </span>
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPwd(e.target.value)}
+                  value={pwd}
+                  required
+                  aria-invalid={validPwd ? "false" : "true"}
+                  aria-describedby="passwordNote"
+                  onFocus={() => setPwdFocus(true)}
+                  onBlur={() => setPwdFocus(false)}
+                />
               </div>
-              <label htmlFor="password">
-                <span>
-                  <CiLock />
-                </span>
-              </label>
-              <input
-                id="password"
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPwd(e.target.value)}
-                value={pwd}
-                required
-                aria-invalid={validPwd ? "false" : "true"}
-                aria-describedby="passwordNote"
-                onFocus={() => setPwdFocus(true)}
-                onBlur={() => setPwdFocus(false)}
-              />
+              <p
+                id="passwordNote"
+                className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
+              >
+                <GoStop />8 to 24 characters. Must include uppercase and
+                lowercase letters, a number and a special character. Allowed
+                special characters:
+                <span aria-label="exclamation mark">!</span>
+                <span aria-label="at symbol">@</span>
+                <span aria-label="hashtag">#</span>
+                <span aria-label="dollar sign">$</span>
+                <span aria-label="percent">%</span>
+              </p>
             </div>
+
+            <div className="register__policy">
+              <input
+                className="register__policy-checkbox"
+                type="checkbox"
+                id="policy"
+              />
+              <label className="register__policy-label" htmlFor="policy">
+                By createing an account means you agree to to the
+                <a href="/" className="option">
+                  Terms & Conditions
+                </a>
+                ans our{" "}
+                <a href="/" className="option">
+                  Privacy Policy
+                </a>
+              </label>
+            </div>
+
+            <button className="register__signupBtn">Sign Up</button>
             <p
-              id="passwordNote"
-              className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
+              ref={errRef}
+              className={errMsg ? "errmsg" : "offscreen"} // make it still availble to screen reader
+              aria-live="assertive"
             >
-              <GoStop />8 to 24 characters. Must include uppercase and lowercase
-              letters, a number and a special character. Allowed special
-              characters:
-              <span aria-label="exclamation mark">!</span>
-              <span aria-label="at symbol">@</span>
-              <span aria-label="hashtag">#</span>
-              <span aria-label="dollar sign">$</span>
-              <span aria-label="percent">%</span>
+              {errMsg}
             </p>
-          </div>
-
-          <div className="register__policy">
-            <input
-              className="register__policy-checkbox"
-              type="checkbox"
-              id="policy"
-            />
-            <label className="register__policy-label" htmlFor="policy">
-              By createing an account means you agree to to the
-              <a href="/" className="option">
-                Terms & Conditions
-              </a>
-              ans our{" "}
-              <a href="/" className="option">
-                Privacy Policy
-              </a>
-            </label>
-          </div>
-
-          <button className="register__signupBtn">Sign Up</button>
-          <p
-            ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"} // make it still availble to screen reader
-            aria-live="assertive"
-          >
-            {errMsg}
-          </p>
-          <div className="register__text">
-            <hr />
-            <span>or sign up with</span>
-          </div>
-
+            <div className="register__text">
+              <hr />
+              <span>or sign up with</span>
+            </div>
+          </form>
           <div className="register__oauthBtns">
             <button className="register__googleBtn" onClick={signUpGoogle}>
               <img
@@ -303,7 +304,7 @@ const Register = () => {
               <span>Log In</span>
             </Link>
           </p>
-        </form>
+        </>
       )}
     </div>
   );
