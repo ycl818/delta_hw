@@ -17,6 +17,7 @@ import Register from "./components/AuthComponents/Register";
 // import RequireAuth from "./components/AuthComponents/RequireAuth";
 import useAuth from "./hooks/useAuth";
 import RequireAuth from "./components/AuthComponents/RequireAuth";
+import PersistLogin from "./components/AuthComponents/PersistLogin";
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -30,23 +31,26 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route element={<RequireAuth />}>
-          <Route
-            path="/"
-            element={<Dashboard setOpen={setOpen} isOpen={isOpen} />}
-          >
-            <Route index element={<SummarizePage />} />
-            <Route
-              path="/power-flow-analyzer"
-              element={<PowerFlowAnalyzerPage />}
-            />
-            <Route path="/power-transfer" element={<PowerTransferPage />} />
 
-            <Route path="/essential-data" element={<EssentialDataPage />} />
-            <Route path="/opti-transfer" element={<OptiTransferPage />} />
-            <Route path="/opti-agreement" element={<OptiAgreement />} />
-            <Route path="/help" element={<HelpPage />} />
-            <Route path="/settings" element={<SettingPage />} />
+        <Route element={<PersistLogin />}>
+          <Route element={<RequireAuth />}>
+            <Route
+              path="/"
+              element={<Dashboard setOpen={setOpen} isOpen={isOpen} />}
+            >
+              <Route index element={<SummarizePage />} />
+              <Route
+                path="/power-flow-analyzer"
+                element={<PowerFlowAnalyzerPage />}
+              />
+              <Route path="/power-transfer" element={<PowerTransferPage />} />
+
+              <Route path="/essential-data" element={<EssentialDataPage />} />
+              <Route path="/opti-transfer" element={<OptiTransferPage />} />
+              <Route path="/opti-agreement" element={<OptiAgreement />} />
+              <Route path="/help" element={<HelpPage />} />
+              <Route path="/settings" element={<SettingPage />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

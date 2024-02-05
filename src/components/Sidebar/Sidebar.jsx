@@ -10,7 +10,8 @@ import { PiShareNetworkLight } from "react-icons/pi";
 import { IoHelpCircleOutline } from "react-icons/io5";
 import { CiSettings } from "react-icons/ci";
 import { IoLogOutOutline } from "react-icons/io5";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useLogout from "../../hooks/useLogout";
 
 const links = [
   { name: "概觀", icon: <RxDashboard />, linkName: "" },
@@ -38,9 +39,22 @@ const links = [
 
 export const Sidebar = ({ isOpen, setOpen }) => {
   const { pathname } = useLocation();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
 
   const pathName = pathname.split("/")[1];
-  console.log("🚀 ~ Sidebar ~ pathName:", pathName);
+
+  const logout = useLogout();
+
+  const signOut = async (linkName) => {
+    if (linkName === "logout") {
+      await logout();
+      navigate(from, { replace: true });
+    } else {
+      return;
+    }
+  };
 
   return (
     <>
@@ -70,6 +84,7 @@ export const Sidebar = ({ isOpen, setOpen }) => {
                   pathName === item.linkName ? "active" : ""
                 }`}
                 to={`${item.linkName}`}
+                onClick={() => signOut(item.linkName)}
               >
                 <button
                   key={item.name}
