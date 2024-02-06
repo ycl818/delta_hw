@@ -10,8 +10,12 @@ const Avatar = () => {
     <div className="avatar_wrapper">
       <img
         className="avatar__image"
-        src={userphoto}
-        alt="https://lh3.googleusercontent.com/a/ACg8ocIA7zmOBAB_Z6KKHejBXAkjRYe1PASZecMV41rAj5mzSQ=s96-c"
+        src={
+          userphoto
+            ? userphoto
+            : "https://lh3.googleusercontent.com/a/ACg8ocIA7zmOBAB_Z6KKHejBXAkjRYe1PASZecMV41rAj5mzSQ=s96-c"
+        }
+        alt="Avatar"
         width={40}
         height={40}
       />
