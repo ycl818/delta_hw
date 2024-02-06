@@ -48,7 +48,7 @@ const PersistLogin = () => {
     };
 
     getUser();
-  }, [setAuth, auth?.accessToken, isLoading, refresh, getUserSuccess]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // useLayoutEffect(() => {
   //   const getUser = async () => {
